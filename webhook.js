@@ -11,7 +11,7 @@ server.address().port, app.settings.env);
 });
 
 /* GET for Facebook Validation */
-app.get('/webhook', (req, res) => {
+app.get('/', (req, res) => {
     console.log(req.method + ' request for url: ' + req.url);
     if (req.query['hub.mode'] == 'subscribe' && req.query['hub.verify_token'] ===
     'tuxedo_cat') {

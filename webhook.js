@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 });
 
 /* POST for handling all messages (everything else) */
-app.post('/webhook', (req, res) => {
+app.post('/', (req, res) => {
     console.log(req.method + ' request for url: ' + req.url);
     if (req.body.object === 'page') {
         req.body.entry.forEach ((entry) => {

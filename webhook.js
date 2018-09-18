@@ -60,11 +60,3 @@ function sendMessage (event) {
     });
 
 }
-
-/* Poznamky:
-- stara verze nodejs -> update
-- kontrolovat, jake requesty mi chodi z fb/messengeru
-- permanentnejsi adresa - hodit na pankrecik?
-- next step - dokopat, aby fungovaly jednoduche odpovedi
-- nastudovat hello world express.js
-*/

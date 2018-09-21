@@ -72,7 +72,7 @@ const languageCode = 'en-US';
 
 // Instantiate a DialogFlow client.
 const dialogflow = require('dialogflow');
-const privateKey = process.env.DIALOGFLOW_PRIVATE_KEY;
+let privateKey = (process.env.NODE_ENV=="production") ? JSON.parse(process.env.DIALOGFLOW_PRIVATE_KEY) : process.env.DIALOGFLOW_PRIVATE_KEY;
 const clientEmail = process.env.DIALOGFLOW_CLIENT_EMAIL;
 const config = {
     credentials: {

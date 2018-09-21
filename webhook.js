@@ -72,7 +72,15 @@ const languageCode = 'en-US';
 
 // Instantiate a DialogFlow client.
 const dialogflow = require('dialogflow');
-const sessionClient = new dialogflow.SessionsClient();
+const privateKey = process.env.DIALOGFLOW_PRIVATE_KEY;
+const clientEmail = process.env.DIALOGFLOW_CLIENT_EMAIL;
+const config = {
+    credentials: {
+        private_key: privateKey,
+        client_email: clientEmail
+    }
+};
+const sessionClient = new dialogflow.SessionsClient(config);
 
 // Define session path
 const sessionPath = sessionClient.sessionPath(projectId, sessionId);
@@ -93,7 +101,7 @@ function makeRequest(messageText) {
 function sendRequest(request, event) {
     sessionClient.detectIntent(request).then(responses => {
         const result = responses[0].queryResult;
-        sendMessage(event, result.queryText);
+        sendMessage(event, result.fulfillmentText);
     })
     .catch(err => {
         console.error('DialogFlow ERROR:', err);

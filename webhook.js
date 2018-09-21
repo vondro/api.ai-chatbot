@@ -86,7 +86,7 @@ const sessionClient = new dialogflow.SessionsClient(config);
 const sessionPath = sessionClient.sessionPath(projectId, sessionId);
 
 function makeRequest(messageText) {
-    request = {
+    let request = {
         session: sessionPath,
         queryInput: {
             text: {

@@ -2,7 +2,8 @@ Configuration of Heroku environment variable:
 heroku config:add PAGE_ACCESS_TOKEN=page-access-token-string
 
 Local configuration (Windows PowerShell):
-$env:DIALOGFLOW_PRIVATE_KEY="private key"
+// https://stackoverflow.com/questions/44360792/unable-to-set-rsa-private-key-as-config-var
+$env:DIALOGFLOW_PRIVATE_KEY='"private key"' (yes, with double single and double quotes)
 $env:DIALOGFLOW_CLIENT_EMAIL="client email"
 
 Problem with Heroku key:

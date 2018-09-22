@@ -72,7 +72,7 @@ const languageCode = 'en-US';
 
 // Instantiate a DialogFlow client.
 const dialogflow = require('dialogflow');
-const privateKey = process.env.DIALOGFLOW_PRIVATE_KEY;
+const privateKey = JSON.parse(process.env.DIALOGFLOW_PRIVATE_KEY);
 console.log(privateKey);
 const clientEmail = process.env.DIALOGFLOW_CLIENT_EMAIL;
 const config = {
@@ -81,6 +81,7 @@ const config = {
         client_email: clientEmail
     }
 };
+
 const sessionClient = new dialogflow.SessionsClient(config);
 
 // Define session path

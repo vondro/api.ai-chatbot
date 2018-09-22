@@ -1,1 +1,1 @@
-web: node --inspect webhook.js
+web: node webhook.js

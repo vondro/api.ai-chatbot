@@ -1,6 +1,6 @@
 # api.ai-chatbot
 
-Learning project - simple chatbot written in Node.js using Express.js and Dialogflow API, running in Heroku.
+Learning project - simple chatbot written in Node.js using Express.js and Dialogflow API, running on Heroku.
 
 ### Heroku deployment hints
 
